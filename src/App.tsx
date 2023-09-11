@@ -58,16 +58,27 @@ export default function ResponsiveDrawer(props: Props) {
     typography: {
       h1: {
         fontSize: 32,
-        fontWeight: "bold"
+        fontWeight: "bold",
       },
       h6: {
-        fontSize: 16
-      }
-    }
+        fontSize: 16,
+      },
+    },
+    components: {
+      MuiFab: {
+        styleOverrides: {
+          root: {
+            position: "fixed",
+            right: 20,
+            bottom: 30,
+          },
+        },
+      },
+    },
   });
 
   return (
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar
@@ -137,6 +148,7 @@ export default function ResponsiveDrawer(props: Props) {
             p: 3,
             width: { sm: `calc(100% - ${drawerWidth}px)` },
           }}
+          paddingBottom={4}
         >
           <Toolbar />
           <Outlet />
