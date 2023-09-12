@@ -17,6 +17,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Outlet } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
+import "./App.css";
 
 const drawerWidth = 240;
 
@@ -56,9 +57,11 @@ export default function ResponsiveDrawer(props: Props) {
 
   const theme = createTheme({
     typography: {
+      fontFamily: "Lora",
       h1: {
         fontSize: 32,
         fontWeight: "bold",
+        fontFamily: "Lucida sans",
       },
       h6: {
         fontSize: 16,
@@ -74,6 +77,13 @@ export default function ResponsiveDrawer(props: Props) {
           },
         },
       },
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            textTransform: "none",
+          },
+        },
+      },
     },
   });
 
@@ -86,6 +96,7 @@ export default function ResponsiveDrawer(props: Props) {
           sx={{
             width: { sm: `calc(100% - ${drawerWidth}px)` },
             ml: { sm: `${drawerWidth}px` },
+            backgroundColor: "#103860",
           }}
         >
           <Toolbar>

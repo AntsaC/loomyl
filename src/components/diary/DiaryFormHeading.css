@@ -1,0 +1,13 @@
+.diary-title {
+  border: none;
+  outline: none;
+  font-size: 32px;
+  width: 80%;
+  background: none;
+  margin-top: 4px;
+}
+
+.diary-time {
+  border: none;
+  outline: none;
+}

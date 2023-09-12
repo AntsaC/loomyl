@@ -1,0 +1,17 @@
+#diary-form-content {
+  margin-top: 10px;
+}
+
+#diary-form-content .ck-heading-dropdown {
+  width: 100px;
+}
+
+#diary-form-content .ck {
+  padding-left: 0px;
+  border: none;
+  background: none;
+}
+
+#diary-form-content .ck:focus {
+  box-shadow: none;
+}
