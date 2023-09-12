@@ -63,7 +63,7 @@ export default function ResponsiveDrawer(props: Props) {
       h1: {
         fontSize: 32,
         fontWeight: "bold",
-        fontFamily: "Lucida sans",
+        fontFamily: "Lora",
       },
       h6: {
         fontSize: 16,

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500&display=swap");
+
 body {
   background-image: url("assets/background.jpg");
   background-size: cover;
@@ -5,5 +7,5 @@ body {
   background-attachment: fixed;
   background-position: center top 50px;
   color: #001f3f;
-  font-family: "Lora", sans-serif;
+  font-family: "Lora";
 }
