@@ -1,8 +1,9 @@
 body {
+  background-image: url("../public/assets/imgs/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center top 60px;
+  background-position: center top 50px;
   color: #001f3f;
   font-family: "Lora", sans-serif;
 }

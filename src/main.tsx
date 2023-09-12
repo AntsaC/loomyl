@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import DiaryPage from "./pages/diary/index.tsx";
 import DiaryForm from "./pages/diary/form.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import DiaryDetail from "./pages/diary/detail.tsx";
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "diary",
         element: <DiaryPage />,
+      },
+      {
+        path: "diary/:id",
+        element: <DiaryDetail />,
       },
       {
         path: "form",
