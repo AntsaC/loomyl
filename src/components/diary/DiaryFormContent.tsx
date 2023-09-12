@@ -22,15 +22,9 @@ export default function DiaryFormContent({ diary, onChange }: Prop) {
                 class: "ck-heading_paragraph",
               },
               {
-                model: "heading1",
-                view: "h1",
-                title: "Heading1",
-                class: "ck-heading_heading1",
-              },
-              {
                 model: "heading2",
-                view: "h2",
-                title: "Heading2",
+                view: "h",
+                title: "Heading",
                 class: "ck-heading_heading2",
               },
             ],

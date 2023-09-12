@@ -1,4 +1,10 @@
-import { Box, Divider, IconButton, Stack } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  Divider,
+  IconButton,
+  Stack,
+} from "@mui/material";
 import Diary from "../../models/Diary";
 import "./DiaryFormHeading.css";
 import { Check } from "@mui/icons-material";
@@ -7,12 +13,16 @@ interface Prop {
   diary: Diary;
   onTitleChange: (title: string) => void;
   onTimeChange: (time: string) => void;
+  onSubmit: () => void;
+  isLoading: boolean;
 }
 
 export default function DiaryFormHeading({
   diary,
   onTimeChange,
   onTitleChange,
+  onSubmit,
+  isLoading,
 }: Prop) {
   return (
     <Box>
@@ -23,8 +33,8 @@ export default function DiaryFormHeading({
           onChange={(e) => onTimeChange(e.currentTarget.value)}
           type="datetime-local"
         />
-        <IconButton color="success">
-          <Check />
+        <IconButton onClick={onSubmit} color="success">
+          {isLoading ? <CircularProgress /> : <Check />}
         </IconButton>
       </Stack>
       <input

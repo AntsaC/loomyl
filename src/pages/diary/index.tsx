@@ -1,30 +1,14 @@
-import { Box, Fab } from "@mui/material";
+import { Box, CircularProgress, Fab } from "@mui/material";
 import Heading from "../../components/shared/Heading";
 import DiaryGrid from "../../components/diary/DiaryGrid";
-import Diary from "../../models/Diary";
 import Add from "@mui/icons-material/Add";
 import { useNavigate } from "react-router-dom";
-
-const diarts: Diary[] = [
-  {
-    id: 1,
-    title: "Nandehandeha tany aminy rova",
-    createdAt: "",
-  },
-  {
-    id: 2,
-    title: "Nandehandeha tany aminy rova",
-    createdAt: "",
-  },
-  {
-    id: 3,
-    title: "Nandehandeha tany aminy rova",
-    createdAt: "",
-  },
-];
+import { useQuery } from "@tanstack/react-query";
+import { DiaryService } from "../../services/DiaryService";
 
 export default function DiaryPage() {
   const navigate = useNavigate();
+  const { data } = useQuery(DiaryService.allQuery());
 
   return (
     <Box>
@@ -32,7 +16,7 @@ export default function DiaryPage() {
         <Add />
       </Fab>
       <Heading text={"Antsa's diary"} />
-      <DiaryGrid diarys={diarts} />
+      {data ? <DiaryGrid diarys={data} /> : <CircularProgress />}
     </Box>
   );
 }
