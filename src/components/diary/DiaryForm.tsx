@@ -1,25 +1,22 @@
 import { Box } from "@mui/material";
-import DiaryFormHeading from "../../components/diary/DiaryFormHeading";
-import Diary from "../../models/Diary";
-import DiaryFormContent from "../../components/diary/DiaryFormContent";
-import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { DiaryService } from "../../services/DiaryService";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { queryClient } from "../../main";
+import Diary from "../../models/Diary";
+import { DiaryService } from "../../services/DiaryService";
+import DiaryFormContent from "./DiaryFormContent";
+import DiaryFormHeading from "./DiaryFormHeading";
 
-const initialDiary: Diary = {
-  title: "",
-  content: "",
-  createdAt: new Date().toISOString().slice(0, 16),
-};
-
-export default function DiaryForm() {
+export default function DiaryForm({ initialDiary }: { initialDiary: Diary }) {
   const [diary, setDiary] = useState<Diary>(initialDiary);
+  const navigate = useNavigate();
 
   const mutation = useMutation<any, Error, any>({
     mutationFn: DiaryService.save,
-    onSuccess: () => {
+    onSuccess: (resp) => {
       queryClient.invalidateQueries({ queryKey: ["diaries"] });
+      navigate(`/diary/${resp.data.id}`);
     },
   });
 

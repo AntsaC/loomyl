@@ -34,7 +34,7 @@ export default function DiaryFormHeading({
           type="datetime-local"
         />
         <IconButton onClick={onSubmit} color="success">
-          {isLoading ? <CircularProgress /> : <Check />}
+          {isLoading ? <CircularProgress size={"small"} /> : <Check />}
         </IconButton>
       </Stack>
       <input

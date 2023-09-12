@@ -15,7 +15,7 @@ export default function DiaryPage() {
       <Fab onClick={() => navigate("/form")}>
         <Add />
       </Fab>
-      <Heading text={"Antsa's diary"} />
+      <Heading text={"Our diaries"} />
       {data ? <DiaryGrid diarys={data} /> : <CircularProgress />}
     </Box>
   );

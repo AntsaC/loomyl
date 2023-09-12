@@ -114,7 +114,7 @@ export default function ResponsiveDrawer(props: Props) {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap component="div">
-              Responsive drawer
+              Lomyl's diaries
             </Typography>
           </Toolbar>
         </AppBar>

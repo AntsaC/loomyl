@@ -20,8 +20,11 @@ const oneQuery = (id: number | string) => ({
 const save = (diary: any) =>
   diary.id ? api.put(`diaries/${diary.id}`, diary) : api.post("diaries", diary);
 
+const deletes = (id: number) => api.delete(`diaries/${id}`);
+
 export const DiaryService = {
   allQuery,
   oneQuery,
   save,
+  deletes,
 };

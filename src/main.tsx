@@ -3,9 +3,10 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import DiaryPage from "./pages/diary/index.tsx";
-import DiaryForm from "./pages/diary/form.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import DiaryDetail from "./pages/diary/detail.tsx";
+import DiaryCreate from "./pages/diary/create.tsx";
+import DiaryEdit from "./pages/diary/edit.tsx";
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,7 +35,11 @@ const router = createBrowserRouter([
       },
       {
         path: "form",
-        element: <DiaryForm />,
+        element: <DiaryCreate />,
+      },
+      {
+        path: "edit/:id",
+        element: <DiaryEdit />,
       },
     ],
   },
