@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import Diary from "../../models/Diary";
 import "./DiaryGridItem.css";
-import { grey } from "@mui/material/colors";
+import { blue } from "@mui/material/colors";
 import { DateUtils } from "../../utils/DateUtils";
 import { useNavigate } from "react-router-dom";
 import { Delete, Edit } from "@mui/icons-material";
@@ -36,7 +36,7 @@ export default function DiaryGridItem({ diary }: Prop) {
 
   return (
     <div className="grid-item" onClick={() => navigate(diary.id!.toString())}>
-      <Typography variant="h6" fontSize={14} color={grey[100]}>
+      <Typography variant="h6" fontSize={13} color={blue[900]}>
         {DateUtils.parse(diary.createdAt)}
       </Typography>
       <Typography marginTop={1} variant="h5">

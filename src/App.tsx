@@ -43,6 +43,7 @@ export default function ResponsiveDrawer(props: Props) {
             disablePadding
             component={NavLink}
             to={route.path}
+            onClick={handleDrawerToggle}
           >
             <ListItemButton>
               <ListItemIcon>{route.icon}</ListItemIcon>
@@ -59,11 +60,10 @@ export default function ResponsiveDrawer(props: Props) {
 
   const theme = createTheme({
     typography: {
-      fontFamily: "Lora",
+      fontFamily: "KaushanScript",
       h1: {
         fontSize: 32,
         fontWeight: "bold",
-        fontFamily: "Lora",
       },
       h6: {
         fontSize: 16,
@@ -111,8 +111,8 @@ export default function ResponsiveDrawer(props: Props) {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap component="div">
-              Lomyl's diaries
+            <Typography variant="h6" textAlign={"center"} noWrap>
+              LOMYL DIARY BOOK
             </Typography>
           </Toolbar>
         </AppBar>

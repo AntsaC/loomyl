@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "KaushanScript";
+  src: url("./fonts/KaushanScript-Regular.otf") format("opentype");
+}
+
 body {
   background-image: url("assets/background.jpg");
   background-size: cover;
@@ -5,5 +10,5 @@ body {
   background-attachment: fixed;
   background-position: center top 50px;
   color: #001f3f;
-  font-family: "Lora";
+  font-family: "KaushanScript", "Arial";
 }
