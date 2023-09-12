@@ -2,6 +2,9 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import "./DiaryFormContent.css";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import Diary from "../../models/Diary";
+import { useEffect, useState } from "react";
+import { Fab } from "@mui/material";
+import { ArrowUpward } from "@mui/icons-material";
 
 interface Prop {
   diary: Diary;
@@ -9,6 +12,24 @@ interface Prop {
 }
 
 export default function DiaryFormContent({ diary, onChange }: Prop) {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 100) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div id="diary-form-content">
       <CKEditor
@@ -37,6 +58,7 @@ export default function DiaryFormContent({ diary, onChange }: Prop) {
             "|",
             "imageUpload",
             "numberedList",
+            "bulletedList",
           ],
           language: "fr",
           placeholder: "Commencez à écrire...",
@@ -46,6 +68,19 @@ export default function DiaryFormContent({ diary, onChange }: Prop) {
           onChange(editor.getData());
         }}
       />
+      {visible && (
+        <Fab
+          size="small"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }
+        >
+          <ArrowUpward />
+        </Fab>
+      )}
     </div>
   );
 }

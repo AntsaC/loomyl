@@ -1,7 +1,3 @@
-#diary-form-content {
-  margin-top: 10px;
-}
-
 #diary-form-content .ck-heading-dropdown {
   width: 100px;
 }
@@ -14,4 +10,10 @@
 
 #diary-form-content .ck:focus {
   box-shadow: none;
+}
+
+#diary-form-content .ck-sticky-panel__content {
+  border-bottom: 0.2px rgba(104, 104, 104, 0.4) solid;
+  position: static;
+  top: 100px;
 }

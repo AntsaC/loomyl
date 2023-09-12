@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { DiaryService } from "../../services/DiaryService";
-import { Box, CircularProgress, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { DateUtils } from "../../utils/DateUtils";
 import "./DiaryDetail.css";
+import ProgressAnimation from "../../components/shared/ProgressAnimation";
 
 export default function DiaryDetail() {
   const { id } = useParams();
@@ -25,5 +26,5 @@ export default function DiaryDetail() {
       </Box>
     );
   }
-  return <CircularProgress />;
+  return <ProgressAnimation />;
 }
