@@ -42,7 +42,7 @@ export default function DiaryFormContent({ diary, onChange }: Prop) {
           placeholder: "Commencez à écrire...",
         }}
         data={diary.content}
-        onChange={(event, editor) => {
+        onChange={(_event, editor) => {
           onChange(editor.getData());
         }}
       />

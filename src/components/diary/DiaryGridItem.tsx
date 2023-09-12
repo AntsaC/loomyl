@@ -3,8 +3,6 @@ import {
   CircularProgress,
   Dialog,
   DialogActions,
-  DialogContent,
-  DialogContentText,
   DialogTitle,
   IconButton,
   Stack,
@@ -32,7 +30,7 @@ export default function DiaryGridItem({ diary }: Prop) {
     mutationFn: DiaryService.deletes,
   });
 
-  function handleOnDelete(event: any): void {
+  function handleOnDelete(): void {
     mutation.mutate(diary.id!);
   }
 
