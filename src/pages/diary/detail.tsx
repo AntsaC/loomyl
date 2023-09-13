@@ -5,6 +5,7 @@ import { Box, Typography } from "@mui/material";
 import { DateUtils } from "../../utils/DateUtils";
 import "./DiaryDetail.css";
 import ProgressAnimation from "../../components/shared/ProgressAnimation";
+import { motion } from "framer-motion";
 
 export default function DiaryDetail() {
   const { id } = useParams();
@@ -20,7 +21,20 @@ export default function DiaryDetail() {
       >
         <Typography variant="h1">{data.title}</Typography>
         <h5>{DateUtils.parse(data.createdAt)}</h5>
-        <div
+
+        <motion.div
+          initial={{
+            height: 0,
+            opacity: 0,
+          }}
+          animate={{
+            height: "auto",
+            opacity: 1,
+          }}
+          transition={{
+            duration: 2,
+          }}
+          className="content-detail"
           dangerouslySetInnerHTML={{ __html: data.content ?? "Empty diary" }}
         />
       </Box>
