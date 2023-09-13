@@ -1,8 +1,10 @@
 import { UseMutationResult } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
 
-export const BASE_URL = "https://loomyl-2.onrender.com/";
-//export const BASE_URL = "http://localhost:8080/";
+export const BASE_URL =
+  import.meta.env.MODE === "production"
+    ? "https://loomyl-2.onrender.com/"
+    : "http://localhost:8080/";
 
 const api = axios.create({
   baseURL: BASE_URL,

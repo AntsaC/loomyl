@@ -1,11 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import {
-  RouterProvider,
-  createBrowserRouter,
-  redirect,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import DiaryPage from "./pages/diary/index.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import DiaryDetail from "./pages/diary/detail.tsx";
@@ -28,12 +24,9 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    loader: async () => {
-      return redirect("/diary");
-    },
     children: [
       {
-        path: "diary",
+        path: "",
         element: <DiaryPage />,
       },
       {

@@ -8,7 +8,7 @@ interface Route {
 
 export const routes: Route[] = [
   {
-    path: "diary",
+    path: "",
     label: "Diaries",
     icon: <Book />,
   },
