@@ -35,7 +35,7 @@ export default function DiaryGridItem({ diary }: Prop) {
   }
 
   return (
-    <div className="grid-item" onClick={() => navigate(diary.id!.toString())}>
+    <div className="grid-item" onClick={() => navigate("/diary/" + diary.id!)}>
       <Typography variant="h6" fontSize={13} color={blue[900]}>
         {DateUtils.parse(diary.createdAt)}
       </Typography>
